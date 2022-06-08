@@ -1,0 +1,492 @@
+AWS Account
+===========
+1.free account - 750hrs - 1 yrs
+Debit/credit - 2/-rs
+AWS
+
+2. Putty software(puttygen also)
+
+Optional - Puttygen
+
+Linux - OS
+=========
+Server
+Linux - command line
+
+Linux Server
+==========
+Launch server
+EC2 instnace/service/server
+
+Elastic Compute cloud - EC2 - VM(Virtual Machine) server
+
+EC2 - Instance
+==============
+7 steps
+
+linux20april.pem
+
+How to convert the privatekey
+========================
+puttygen - public we need private key(ppkfile)
+
+how to connect the server
+========================
+linux-server(ec2-instnace) - public IP Address
+
+21/04
+=========
+Linux
+========
+linux OS, Free open source os
+Unix  - paid one, os
+
+Linux
+========
+CentOS -
+Ubuntu
+SUSE Linux
+
+Windows
+=========
+
+Linux
+========
+FSH - File System Hierarchy
+=========
+The Linux FSH defines the directory structure 
+
+Folder/ Directory
+
+pwd - present working directory
+
+mkdir linux
+ls
+cd linux-demo
+
+file -creation
+================
+touch file1
+
+Note :
+=====
+In side directory you may have 100 files - directories are difined with "blue color"
+In side file there no directories - files are defined with "white color"
+
+Delete/Remove directory/folder
+=============================
+rm -rf dirname
+or
+rm -r firectory (type - y)
+
+Delete/Remove files
+============
+rm -f filename
+
+Permissions and rights
+================
+A linux is a Multi-user  Operating system which can be accessed by many user simultaneously.
+Hence this raises security conecrns as am going to restrict on the perticular user
+
+2 levels
+
+1. Ownership
+2. Pemission
+
+How to change the ownership
+=====================
+The chown command change ownership of files and directories in a linux filesystem
+to change the owner of a files/directory
+
+syntax: chown  <ownername>  <filename>
+
+file name - file.txt
+
+1.chown ec2-user
+
+-rw-r--r-- 1 
+  
+-rw-    r--        r-- 1 (file - level)
+user    group     others
+
+Group:
+=====
+chown commands is also used to change group name of a file like, "chgrp" commands
+
+synatx: chown <groupname> <filename>
+
+chown :ec2-user file.txt
+
+To recursively chnage ownershop of directories and teir contents
+========================
+
+synatx: chown -R root >filename>
+
+mkdir test
+
+ d          -rw-    r--        r-- 1
+directory   users   group      others
+
+
+
+2.chown -R root filename
+
+-R = To recursively change ownership of directories and their contents
+
+mkdir test
+chown -R ec2-user:ec2-user test
+
+
+How to chnage the Permission
+========================
+1. read   	=4
+2. write	=2
+3. Execution	=1
+
+
+Permissions
+==============
+Read      - r   -  - 4
+Write     - w   -  - 2
+Execution - x   -  - 1
+		   ====
+                    7
+Synatx: ls -lha
+
+Example
+===========
+d	rwx		r-x		r-x
+
+dir	(user)		(Group)		(Others)
+
+task:
+======
+
+setting 442(rrw) permissions for the file of  file.txt(filename)
+
+
+rwx		r-x		r-x
+ r		r		w
+
+file.txt rrw
+
+chmod 442 file.txt
+
+
+How to change the permissions & ownership recursively
+==============================
+to chnage the file access permissions you need to sue the chmod command. it has -R or -recursive option thar chnage files and directories recursively
+
+mkdir dir5
+cd dir5
+touch file6 file7
+
+dir5 - rwx 
+
+d	rwx		r-x		r-x
+
+dir	(user)		(Group)		(Others)
+
+7	0		0
+
+700 --(user)--(group)--(others)
+
+
+
+file2 r r w
+
+r--		r--		w--
+ 4		4		2
+chmod 442 file2
+
+permission with dire - anusha
+
+d(rx) user(rx) group(rx) others
+
+5	5	5 
+
+chmod  -R 555 anusha
+
+if you want give the permissions directory level(you should not entire inside the directory)
+
+
+Linux/Unix Command
+=========
+1. File commands
+
+ls - directory listing/ files listing
+ls -al  - hidden files to be displyed
+cd dir - change dir to dir
+cd - change to home
+rm file - delete file
+rm -f filename - force remove file
+rm -r dir -
+rm -rf dir
+cp file1 file2 - copy the file1 file2
+cp -r dir1 dir2 - copy the dir1 dir2
+mv file file2 - rename or move file1 dile2
+touch file -
+cat file - to see content inside file
+more file - output the content of file
+head file - output the first 10 lines of file
+tail file -  output the last 10 lines of file
+tail -f file - output the content of files as it grows, starting with the last 10 lines
+
+
+
+2. Process managemnet
+
+ps - display your current active process
+top - display all running process
+kill pid - kill process id pid
+bg - list stopped or backgroundjobs; resume a stopped job in the background
+fg - bring the most recent job into foreground
+fg n - bring job n into foreground
+
+
+
+3. File Permissions
+
+chmod octal file -  chnage the permisiions of file of octal, which can be found separately for user, groups and world by adding
+
+ 4 - read(r)
+ 2 - write(w)
+ 1 - Execution(x)
+
+Exmaple:
+-
+chmod 777
+chmod 755
+
+
+4. SSH
+ssh user@host - connect to host as user
+ssh -p port uset@host  - connect to host on port port as user
+
+
+VIM Editor:
+==========
+Vim is powerfull text editor used in CLI(Command Line Interface).
+Linux uses a lot of configuration files.
+if you edit them and vim is a great tool do so, aletrnatively VIM is a command line editor
+
+vim flie.txt
+50 lines 
+50 lines
+
+
+vi editor
+vim editor
+
+It has 3 modes:
+----
+1. Command Mode
+2. Insert Mode
+3. Extended Mode
+
+Note: when you open the vim editor , it will be in the command mode by default.
+
+Insert Mode - i
+Extended mode
+----
+save - esc:wq!
+withoutsave- esc:q!
+
+Command Mode
++++++++++++++++++
+gg - to go to the beginning of the page
+Shift+g - go to the end of the page
+w - to move the cursor forward, word by word
+b - to move the cursor backword, word by word
+nw - to move the cursor forward to n words(5W)
+nb - to move the cursor backend to n words(5W)
+u - to undo last change(word)
+Ctrl+u - to undo previous chnages (entire line)
+Ctrl+r - to redo changes
+yy - to copy a line
+nyy - to copy n lines (5yy or 4yy)
+p - to past line below the cursor position
+P - to past line above the cursor positio
+dw - delete the word letter by letter(like Backspace)
+x - to delete the word letter by letter( delete key)
+dd - to delete entire line
+ndd - to delete n no.of positions from cursor positions(5dd)
+/ - To search a word in the file
+
+
+Insert Mode(edit mode):
++++++++++++++++
+i - To begin Insert Mode
+I - To insert beginning of line
+a - To Append the next word's letter
+A - To append at the end of the line
+o - To insert a new line below the cursor positions
+O - To insert a new line Above the cursor positions
+
+Extended Mode(colon Mode)
+++++++++++++
+Esc+:w - To save the changes
+Esc+:q! - to quit(without save)
+Esc+:wq - to save and quit
+Esc+:w! - To save forcefully
+Esc+:wq! - To save and quite forcefully
+Esc+:x - to save and quit
+Esc+:X - to give password to the file and remove password
+Esc+:20(n) - to go to line no 20 or n
+Esc+:se nu - to set the line numbers to the file
+Esc+:se nonu - To remove the set line number
+
+
+Monitoring:
++++++++++++++++++++
+- when you needs to see the running process on your linux in real time, you can have top as your tool that.
+
+- top alos displayes other info besides the running process 
+top 
+tasks - shows the numbe of process and their current state
+%cpu- show CPU uilizaion details, user process, system process running, system Idle cpu.
+
+Swap Memory in Linux:
+===================
+Swap space in Linux is used when the amount of physical memory (RAM) is full. If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space.
+ While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM.
+
+What is buff cache Linux?
+========================
+buff/cache is memory used by the Linux kernel buffers and page cache. 
+You force clear buff/cache using the 'echo' command but observe it gradually increase again to 85% memory consumption.
+ Shutting down the SAP NW application and/or database server. does not show buff/cache release any memory.
+
+PID - ProcessID
+USER - Effective UserID
+PR - Dynamic Prority
+NI - nice Value, also known as base priority
+VIRT - Vitrual size of the task. This includes size of process executable binary, the data area and all the loaded shared libraries
+RES - The size of RAM Currently consumed by the task, Swapped out portion of the task is not included
+SHR - Some memory ares clould be shared b/w two or more task, this fileds reflects the shared area.
+S - Task status
+%CPU - the %CPU time dedicated to run the task since the last top's screen update
+%MEM - the %Mem of RAM currently consumed by the task
+TIME + - The total CPU time and task has been used since it started "+"sign means is displayed wih hundredth of second granularity.
+  BY default, TIME/TIME+ desont account CPU Time used by the task's dead children
+COMMAND-  Showing program names.
+
+Kill userdetails
+-------------
+ kill -9 PID
+
+Intracting with Top
+================
+M- 
+P-
+T- 
+z - 
+k - 
+r- 
+h
+
+How do I find zombies on Linux?
+===================
+Image result for zombie in linux
+
+How to find zombie processes?
+D = uninterruptible sleep.
+I = idle.
+R = running.
+S = sleeping.
+T = stopped by job control signal.
+t = stopped by debugger during trace.
+Z = zombie.
+
+Ping commnad
+===========
+packet internet Groper
+
+ICMP - internet Control Messages
+TTL - Time To Live
+ping -c2 google.com
+
+
+vmstate command:
+================
+
+vmstate (virtual memory stastics)
+info about block IO and CPU 
+
+Software Management
+====================
+its important role in installaling and configuring the softwares.
+
+2 ways we can approach
+1.rpm - Redhat package manager
+2.yum - yellow dog update manager
+
+
+RPM:
+========
+RPM is a package managing system(collection of tools to manage software packages) - ex- git, maven, jenkins, python, java
+RPM is powerful software mangement tools for installing, uninstall, verifying, querying and updating software packages.
+RPM straight forward program to perform the above s/w management tasks.
+
+synatx:
+
+rpm -qa (where q stands for query, and a stands fo all)
+
+rpm -qa python
+
+installion syntax:
+====
+rpm -ivh package name
+
+
+list ou of package in linux server
+==============
+rpm -qa |grep -i python
+
+grep - global regular expression print
+
+
+
+
+yum 
+=====
+yum install git -y
+
+
+Repo:
+clean
+list
+
+Netwprk Configuration & Trouble Shooting
+-----------------------
+Networking - it is a cionnection b/w two or more machines to communicate with each other
+
+#/etc/sysconfig/network-scripts/
+
+
+ls /etc/sysconfig/network-scripts/
+
+
+cat /etc/sysconfig/network:
+---------------------
+
+is a file whiich keep the information about the hostname assigned to the system. 
+if you want to chnage the hostname permenently , you need to change the hostname in this file.
+
+checking the IP Address
+===========
+ifconfig -a
+
+DNS
+----
+Domain Name spacific
+
+nslookup ipaddress/hostname
+nslookup 
+
+
+What is the difference between sudo and su command?
+===================================
+The main difference between Su and Sudo is that the Su command can interchange between superuser and root user if executed without prior additional options while the Sudo command provides single root privileges. 
+Su demands the password of the root account while Sudo demands the password of the current user accoun
+
